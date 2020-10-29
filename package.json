@@ -6,7 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariqyandri/imageboard-server.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariqyandri/imageboard-server/issues"
+  },
+  "homepage": "https://github.com/ariqyandri/imageboard-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
