@@ -1,6 +1,8 @@
 const { Router } = require("express");
-const { user: User } = require("../models");
+const bcrypt = require("bcrypt");
 const router = new Router();
+const { user: User } = require("../models");
+const authMiddleware = require("../auth/middleware");
 
 router.get("/", (req, res, next) => {
   try {
@@ -16,7 +18,11 @@ router.post("/", async (req, res, next) => {
     if (!fullName || !email || !password) {
       res.status(400).send(`parameters are missing`);
     }
-    const newUser = await User.create({ fullName, email, password });
+    const newUser = await User.create({
+      fullName,
+      email,
+      password: bcrypt.hashSync(password, 10),
+    });
     res.json(newUser);
   } catch (e) {
     next(e);

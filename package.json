@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ariqyandri/imageboard-server#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.4.2",
